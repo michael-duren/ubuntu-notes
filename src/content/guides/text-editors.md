@@ -380,32 +380,6 @@ If you want a fully configured Neovim setup out of the box, consider these popul
 
 ## Other Text Editors on Ubuntu
 
-### Vim
-
-The classic editor that Neovim is forked from. Still widely available and used.
-
-```bash
-sudo apt install vim
-```
-
-Configuration file: `~/.vimrc` (Vimscript only, no Lua support)
-
-### nano
-
-The simplest terminal editor — great for quick edits.
-
-```bash
-# Usually pre-installed. Configuration:
-nano ~/.nanorc
-
-# Useful nanorc options:
-set linenumbers
-set tabsize 2
-set autoindent
-set mouse
-set softwrap
-```
-
 ### VS Code
 
 The most popular GUI editor for development.
@@ -421,7 +395,287 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" | 
 sudo apt update && sudo apt install code
 ```
 
-Configuration: `~/.config/Code/User/settings.json`
+#### VS Code Settings
+
+**Settings file:** `~/.config/Code/User/settings.json`
+
+#### VS Code Keybindings
+
+**Keybindings file:** `~/.config/Code/User/keybindings.json`
+
+Each entry in `keybindings.json` is a JSON object with the following schema:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `key` | string | yes | Key combination (e.g., `ctrl+shift+p`, `ctrl+k ctrl+s`) |
+| `command` | string | yes | Command ID to execute (prefix with `-` to remove a default binding) |
+| `when` | string | no | Context condition (e.g., `editorTextFocus`, `!inDebugMode`) |
+| `args` | any | no | Arguments passed to the command |
+
+#### Common Command IDs
+
+| Command ID | Default Key | Description |
+|------------|-------------|-------------|
+| `workbench.action.openSettings` | `Ctrl+,` | Open settings |
+| `workbench.action.showCommands` | `Ctrl+Shift+P` | Open command palette |
+| `workbench.action.quickOpen` | `Ctrl+P` | Quick open file |
+| `workbench.action.toggleSidebar` | `Ctrl+B` | Toggle sidebar |
+| `workbench.action.togglePanel` | `Ctrl+J` | Toggle bottom panel |
+| `workbench.action.terminal.toggleTerminal` | `` Ctrl+` `` | Toggle integrated terminal |
+| `workbench.action.splitEditor` | `Ctrl+\` | Split editor |
+| `workbench.action.closeActiveEditor` | `Ctrl+W` | Close active editor |
+| `workbench.action.closeAllEditors` | `Ctrl+K Ctrl+W` | Close all editors |
+| `workbench.action.navigateBack` | `Alt+Left` | Go back |
+| `workbench.action.navigateForward` | `Alt+Right` | Go forward |
+| `editor.action.formatDocument` | `Ctrl+Shift+I` | Format document |
+| `editor.action.commentLine` | `Ctrl+/` | Toggle line comment |
+| `editor.action.blockComment` | `Ctrl+Shift+A` | Toggle block comment |
+| `editor.action.rename` | `F2` | Rename symbol |
+| `editor.action.goToDefinition` | `F12` | Go to definition |
+| `editor.action.peekDefinition` | `Alt+F12` | Peek definition |
+| `editor.action.goToReferences` | `Shift+F12` | Go to references |
+| `editor.action.triggerSuggest` | `Ctrl+Space` | Trigger autocomplete |
+| `editor.action.quickFix` | `Ctrl+.` | Quick fix |
+| `workbench.action.files.save` | `Ctrl+S` | Save file |
+| `workbench.action.files.saveAll` | `Ctrl+K S` | Save all files |
+
+#### Example keybindings.json
+
+```json
+// ~/.config/Code/User/keybindings.json
+[
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+k ctrl+d",
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch"
+  }
+]
+```
+
+### Vim
+
+The classic editor that Neovim is forked from. Still widely available and used.
+
+```bash
+sudo apt install vim
+```
+
+**Configuration file:** `~/.vimrc` (Vimscript only, no Lua support)
+
+#### Example ~/.vimrc
+
+```vim
+" ~/.vimrc — Vim configuration
+" Equivalent options to the Neovim config above, in Vimscript
+
+" ── General ──────────────────────────────────────────────
+set nocompatible              " Disable Vi compatibility
+filetype plugin indent on     " Enable filetype detection, plugins, and indent
+syntax on                     " Enable syntax highlighting
+
+" ── Line Numbers ─────────────────────────────────────────
+set number                    " Show line numbers
+set relativenumber            " Relative line numbers
+
+" ── Indentation ──────────────────────────────────────────
+set tabstop=2                 " Tab width
+set shiftwidth=2              " Indent width
+set expandtab                 " Use spaces instead of tabs
+set smartindent               " Auto-indent new lines
+set autoindent                " Copy indent from current line
+
+" ── Search ───────────────────────────────────────────────
+set ignorecase                " Case-insensitive search
+set smartcase                 " Case-sensitive if uppercase present
+set nohlsearch                " Don't highlight all matches
+set incsearch                 " Incremental search
+
+" ── Appearance ───────────────────────────────────────────
+set termguicolors             " True color support
+set signcolumn=yes            " Always show sign column
+set cursorline                " Highlight current line
+set scrolloff=8               " Keep 8 lines above/below cursor
+set nowrap                    " No line wrapping
+set colorcolumn=80            " Show column marker at 80 chars
+set showcmd                   " Show partial command in status line
+set showmode                  " Show current mode
+set laststatus=2              " Always show status line
+set wildmenu                  " Enhanced command-line completion
+set wildmode=longest:full,full
+
+" ── Splits ───────────────────────────────────────────────
+set splitbelow                " Horizontal splits open below
+set splitright                " Vertical splits open right
+
+" ── System ───────────────────────────────────────────────
+set clipboard=unnamedplus     " Use system clipboard
+set undofile                  " Persistent undo history
+set undodir=~/.vim/undodir    " Undo file directory (create with mkdir -p)
+set noswapfile                " No swap files
+set nobackup                  " No backup files
+set updatetime=250            " Faster CursorHold events
+set ttimeoutlen=50            " Reduce key code delay
+set mouse=a                   " Enable mouse support
+set encoding=utf-8            " UTF-8 encoding
+set backspace=indent,eol,start " Backspace over everything
+
+" ── Key Mappings ─────────────────────────────────────────
+let mapleader = " "
+
+" Better window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Resize splits with arrow keys
+nnoremap <C-Up> :resize +2<CR>
+nnoremap <C-Down> :resize -2<CR>
+nnoremap <C-Left> :vertical resize -2<CR>
+nnoremap <C-Right> :vertical resize +2<CR>
+
+" Buffer navigation
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprevious<CR>
+nnoremap <leader>bd :bdelete<CR>
+
+" Stay in indent mode
+vnoremap < <gv
+vnoremap > >gv
+
+" Move lines up/down in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Keep cursor centered when scrolling
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Quick save and quit
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>x :x<CR>
+
+" Clear search highlights
+nnoremap <leader>h :nohlsearch<CR>
+```
+
+### nano
+
+The simplest terminal editor — great for quick edits.
+
+**Configuration file:** `~/.nanorc`
+
+#### Available Options
+
+| Option | Description |
+|--------|-------------|
+| `set linenumbers` | Show line numbers |
+| `set tabsize N` | Set tab width to N spaces |
+| `set tabstospaces` | Convert tabs to spaces |
+| `set autoindent` | Auto-indent new lines to match previous line |
+| `set mouse` | Enable mouse support |
+| `set softwrap` | Wrap long lines visually (without inserting newlines) |
+| `set atblanks` | When soft-wrapping, wrap at whitespace instead of mid-word |
+| `set wordchars "chars"` | Characters considered part of a word |
+| `set smooth` | Smooth scrolling (line by line instead of half-screen jumps) |
+| `set boldtext` | Use bold instead of reverse video for highlighted text |
+| `set brackets "chars"` | Characters treated as closing brackets for paragraph justify |
+| `set casesensitive` | Make searches case-sensitive by default |
+| `set constantshow` | Constantly show cursor position in status bar |
+| `set cutfromcursor` | `Ctrl+K` cuts from cursor to end of line (not whole line) |
+| `set fill N` | Hard-wrap lines at column N (0 = terminal width) |
+| `set historylog` | Save search/replace history between sessions |
+| `set indicator` | Show a scroll position indicator on the right |
+| `set matchbrackets "pairs"` | Bracket pairs for matching (e.g., `"(<[{)>]}"`) |
+| `set minibar` | Show a minimal bar with file info instead of title bar |
+| `set nohelp` | Hide the shortcut help lines at the bottom |
+| `set nonewlines` | Don't add a newline at end of file if missing |
+| `set nowrap` | Don't hard-wrap lines (keeps long lines as-is) |
+| `set numbercolor fgcolor` | Color for line numbers |
+| `set positionlog` | Remember cursor position for previously opened files |
+| `set quickblank` | Clear the status bar message after 1 keystroke |
+| `set regexp` | Use regular expressions in search by default |
+| `set showcursor` | Show cursor position in the title bar |
+| `set smarthome` | Home key jumps to first non-whitespace character |
+| `set speller "command"` | External spell checker command |
+| `set stateflags` | Show state flags (modified, auto-indent, etc.) in title bar |
+| `set suspendable` | Allow `Ctrl+Z` to suspend nano |
+| `set trimblanks` | Remove trailing whitespace when saving |
+| `set unix` | Save files in Unix format (LF line endings) |
+| `set zap` | Delete/backspace erases the selected region |
+| `include /path/to/file` | Include another nanorc file (e.g., syntax highlighting) |
+
+#### Example ~/.nanorc
+
+```bash
+# ~/.nanorc — nano configuration
+
+# Display
+set linenumbers
+set constantshow
+set indicator
+set minibar
+set smooth
+set showcursor
+set stateflags
+
+# Indentation
+set tabsize 4
+set tabstospaces
+set autoindent
+set smarthome
+set trimblanks
+
+# Editing behavior
+set mouse
+set zap
+set cutfromcursor
+set matchbrackets "(<[{)>]}"
+
+# Wrapping
+set softwrap
+set atblanks
+set nowrap
+
+# History and state
+set historylog
+set positionlog
+
+# Allow suspend with Ctrl+Z
+set suspendable
+
+# Include syntax highlighting definitions
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano/extra/*.nanorc"
+```
 
 ### Emacs
 
@@ -478,6 +732,7 @@ Here is a reference of the most important configuration files on an Ubuntu syste
 | `~/.vimrc` | Vim configuration |
 | `~/.nanorc` | nano configuration |
 | `~/.config/Code/User/settings.json` | VS Code settings |
+| `~/.config/Code/User/keybindings.json` | VS Code keybindings |
 | `~/.emacs.d/init.el` | Emacs configuration |
 
 ### Terminal & Appearance
