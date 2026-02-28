@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+const guides = await getCollection('guides');
+const guide = guides.find(g => g.id === 'desktop-management');
+if (!guide) throw new Error('Guide not found: desktop-management');
+
+const { Content } = await render(guide);
+---
+<BaseLayout title={guide.data.title} description={guide.data.description}>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+      <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
+      <span>/</span>
+      <a href="/guides/desktop-management" class="hover:text-ubuntu-orange transition-colors">Guides</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">Desktop Management</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">{guide.data.title}</h1>
+    <p class="mb-8" style="color: var(--text-secondary);">{guide.data.description}</p>
+
+    <div class="guide-content">
+      <Content />
+    </div>
+
+    <div class="mt-12 p-4 rounded-lg border" style="background-color: var(--surface-secondary); border-color: var(--border-color);">
+      <p class="text-sm" style="color: var(--text-secondary);">
+        See the default shortcuts: <a href="/cheatsheets/desktop-management" class="text-ubuntu-orange hover:underline font-medium">Desktop Management Cheatsheet</a>
+      </p>
+    </div>
+  </div>
+</BaseLayout>

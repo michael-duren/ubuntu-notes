@@ -1,0 +1,68 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+<header class="sticky top-0 z-40 bg-ubuntu-orange shadow-lg">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- Logo / Home link -->
+    <a href="/" class="flex items-center gap-2 text-white font-bold text-xl hover:opacity-90 transition-opacity">
+      <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="12" r="10" fill="white" opacity="0.2"></circle>
+        <circle cx="12" cy="12" r="6" fill="white"></circle>
+      </svg>
+      Ubuntu Shortcuts
+    </a>
+
+    <!-- Nav links -->
+    <nav class="hidden md:flex items-center gap-6 text-white/90 text-sm font-medium">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <a href="/cheatsheets/window-management" class="hover:text-white transition-colors">Cheatsheets</a>
+      <a href="/guides/window-management" class="hover:text-white transition-colors">Guides</a>
+    </nav>
+
+    <!-- Search + Theme toggle -->
+    <div class="flex items-center gap-2">
+      <button
+        id="search-trigger"
+        type="button"
+        class="flex items-center gap-2 px-3 py-1.5 bg-white/20 hover:bg-white/30 text-white text-sm rounded-lg transition-colors cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <span class="hidden sm:inline">Search</span>
+        <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-xs bg-white/20 rounded font-mono">Ctrl+K</kbd>
+      </button>
+      <ThemeToggle />
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="md:hidden p-2 rounded-lg hover:bg-white/20 transition-colors text-white cursor-pointer"
+        aria-label="Open menu"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobile-menu" class="hidden md:hidden px-4 pb-4 text-white/90 text-sm font-medium space-y-2">
+    <a href="/" class="block py-2 hover:text-white transition-colors">Home</a>
+    <a href="/cheatsheets/window-management" class="block py-2 hover:text-white transition-colors">Cheatsheets</a>
+    <a href="/guides/window-management" class="block py-2 hover:text-white transition-colors">Guides</a>
+  </nav>
+</header>
+
+<script>
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+  }
+  initMobileMenu();
+  document.addEventListener('astro:after-swap', initMobileMenu);
+</script>

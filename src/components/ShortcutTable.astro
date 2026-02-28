@@ -1,0 +1,54 @@
+---
+interface Shortcut {
+  id: string;
+  shortcut: string;
+  action: string;
+  category: string;
+  subcategory: string;
+  type: string;
+  tags: string[];
+}
+
+interface Props {
+  title: string;
+  shortcuts: Shortcut[];
+}
+
+const { title, shortcuts } = Astro.props;
+
+function parseKeys(shortcut: string): string[][] {
+  // Split on " + " to get individual keys, but handle "←/→" style combos
+  return [shortcut.split(' + ').map(k => k.trim())];
+}
+---
+<div class="mb-8">
+  <h3 class="text-lg font-semibold mb-3" style="color: var(--text-primary);">{title}</h3>
+  <div class="overflow-x-auto rounded-lg border" style="border-color: var(--border-color);">
+    <table class="w-full text-sm">
+      <thead>
+        <tr style="background-color: var(--surface-tertiary);">
+          <th class="text-left px-4 py-3 font-semibold" style="color: var(--text-primary);">Shortcut</th>
+          <th class="text-left px-4 py-3 font-semibold" style="color: var(--text-primary);">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {shortcuts.map((s, i) => (
+          <tr
+            class="border-t"
+            style={`border-color: var(--border-color); background-color: ${i % 2 === 1 ? 'var(--table-stripe)' : 'transparent'};`}
+          >
+            <td class="px-4 py-3">
+              {parseKeys(s.shortcut)[0].map((key, j) => (
+                <>
+                  {j > 0 && <span class="mx-1" style="color: var(--text-muted);">+</span>}
+                  <kbd>{key}</kbd>
+                </>
+              ))}
+            </td>
+            <td class="px-4 py-3" style="color: var(--text-secondary);">{s.action}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>

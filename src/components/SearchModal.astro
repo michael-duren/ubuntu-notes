@@ -1,0 +1,154 @@
+---
+import shortcuts from '../data/shortcuts.json';
+---
+<div id="search-modal" class="hidden fixed inset-0 z-50" role="dialog" aria-modal="true">
+  <!-- Backdrop -->
+  <div id="search-backdrop" class="absolute inset-0" style="background-color: var(--search-backdrop);"></div>
+
+  <!-- Modal -->
+  <div class="relative max-w-xl mx-auto mt-[15vh] rounded-xl shadow-2xl overflow-hidden border" style="background-color: var(--surface-card); border-color: var(--border-color);">
+    <!-- Search input -->
+    <div class="flex items-center px-4 border-b" style="border-color: var(--border-color);">
+      <svg class="w-5 h-5 shrink-0" style="color: var(--text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search shortcuts..."
+        class="w-full px-3 py-4 text-base outline-none bg-transparent"
+        style="color: var(--text-primary);"
+        autocomplete="off"
+      />
+      <kbd class="text-xs px-1.5 py-0.5 rounded shrink-0" style="background-color: var(--surface-tertiary); color: var(--text-muted);">ESC</kbd>
+    </div>
+
+    <!-- Results -->
+    <div id="search-results" class="max-h-80 overflow-y-auto p-2">
+      <p id="search-empty" class="py-8 text-center text-sm" style="color: var(--text-muted);">
+        Type to search shortcuts...
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Embed shortcut data for client-side search -->
+<script type="application/json" id="shortcut-data" set:html={JSON.stringify(shortcuts)} />
+
+<script>
+  import Fuse from 'fuse.js';
+
+  const categoryPages: Record<string, string> = {
+    'window-management': '/cheatsheets/window-management',
+    'desktop-management': '/cheatsheets/desktop-management',
+    'tab-management': '/cheatsheets/tab-management',
+  };
+
+  function initSearch() {
+    const modal = document.getElementById('search-modal');
+    const backdrop = document.getElementById('search-backdrop');
+    const input = document.getElementById('search-input') as HTMLInputElement;
+    const results = document.getElementById('search-results');
+    const empty = document.getElementById('search-empty');
+    const trigger = document.getElementById('search-trigger');
+    const dataEl = document.getElementById('shortcut-data');
+
+    if (!modal || !input || !results || !dataEl) return;
+
+    const shortcuts = JSON.parse(dataEl.textContent || '[]');
+    const fuse = new Fuse(shortcuts, {
+      keys: [
+        { name: 'action', weight: 0.4 },
+        { name: 'shortcut', weight: 0.3 },
+        { name: 'tags', weight: 0.2 },
+        { name: 'subcategory', weight: 0.1 },
+      ],
+      threshold: 0.4,
+      includeScore: true,
+    });
+
+    function open() {
+      modal!.classList.remove('hidden');
+      input!.value = '';
+      input!.focus();
+      renderEmpty();
+    }
+
+    function close() {
+      modal!.classList.add('hidden');
+    }
+
+    function renderEmpty() {
+      results!.innerHTML = '';
+      const p = document.createElement('p');
+      p.className = 'py-8 text-center text-sm';
+      p.style.color = 'var(--text-muted)';
+      p.textContent = 'Type to search shortcuts...';
+      results!.appendChild(p);
+    }
+
+    function renderResults(query: string) {
+      if (!query.trim()) {
+        renderEmpty();
+        return;
+      }
+
+      const hits = fuse.search(query, { limit: 10 });
+      results!.innerHTML = '';
+
+      if (hits.length === 0) {
+        const p = document.createElement('p');
+        p.className = 'py-8 text-center text-sm';
+        p.style.color = 'var(--text-muted)';
+        p.textContent = 'No shortcuts found.';
+        results!.appendChild(p);
+        return;
+      }
+
+      hits.forEach(({ item }) => {
+        const a = document.createElement('a');
+        a.href = categoryPages[item.category] || '/';
+        a.className = 'flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-ubuntu-orange/10 transition-colors';
+        a.innerHTML = `
+          <div>
+            <div class="font-medium text-sm" style="color: var(--text-primary);">${item.action}</div>
+            <div class="text-xs mt-0.5" style="color: var(--text-muted);">${item.subcategory}</div>
+          </div>
+          <div class="text-right shrink-0 ml-4">
+            <kbd class="text-xs">${item.shortcut}</kbd>
+          </div>
+        `;
+        results!.appendChild(a);
+      });
+    }
+
+    input.addEventListener('input', () => renderResults(input.value));
+
+    // Open triggers
+    trigger?.addEventListener('click', open);
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        open();
+      }
+      if (e.key === '/' && !modal!.classList.contains('hidden') === false) {
+        const active = document.activeElement;
+        if (active?.tagName !== 'INPUT' && active?.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          open();
+        }
+      }
+      if (e.key === 'Escape' && !modal!.classList.contains('hidden')) {
+        close();
+      }
+    });
+
+    // Close on backdrop click
+    backdrop?.addEventListener('click', close);
+  }
+
+  initSearch();
+  document.addEventListener('astro:after-swap', initSearch);
+</script>

@@ -1,0 +1,443 @@
+[
+  {
+    "id": "wm-snap-left",
+    "shortcut": "Super + ←",
+    "action": "Snap window to left half",
+    "category": "window-management",
+    "subcategory": "Snapping & Tiling",
+    "type": "default",
+    "tags": ["snap", "tile", "left", "half"]
+  },
+  {
+    "id": "wm-snap-right",
+    "shortcut": "Super + →",
+    "action": "Snap window to right half",
+    "category": "window-management",
+    "subcategory": "Snapping & Tiling",
+    "type": "default",
+    "tags": ["snap", "tile", "right", "half"]
+  },
+  {
+    "id": "wm-maximize",
+    "shortcut": "Super + ↑",
+    "action": "Maximize window",
+    "category": "window-management",
+    "subcategory": "Snapping & Tiling",
+    "type": "default",
+    "tags": ["maximize", "fullscreen"]
+  },
+  {
+    "id": "wm-restore",
+    "shortcut": "Super + ↓",
+    "action": "Restore / unmaximize window",
+    "category": "window-management",
+    "subcategory": "Snapping & Tiling",
+    "type": "default",
+    "tags": ["restore", "unmaximize", "minimize"]
+  },
+  {
+    "id": "wm-minimize",
+    "shortcut": "Super + H",
+    "action": "Minimize (hide) window",
+    "category": "window-management",
+    "subcategory": "Minimize & Close",
+    "type": "default",
+    "tags": ["minimize", "hide"]
+  },
+  {
+    "id": "wm-close",
+    "shortcut": "Alt + F4",
+    "action": "Close window",
+    "category": "window-management",
+    "subcategory": "Minimize & Close",
+    "type": "default",
+    "tags": ["close", "quit", "exit"]
+  },
+  {
+    "id": "wm-minimize-alt",
+    "shortcut": "Alt + F9",
+    "action": "Minimize window",
+    "category": "window-management",
+    "subcategory": "Minimize & Close",
+    "type": "default",
+    "tags": ["minimize"]
+  },
+  {
+    "id": "wm-move-monitor",
+    "shortcut": "Super + Shift + ←/→",
+    "action": "Move window to left/right monitor",
+    "category": "window-management",
+    "subcategory": "Moving & Resizing",
+    "type": "default",
+    "tags": ["monitor", "move", "display"]
+  },
+  {
+    "id": "wm-move",
+    "shortcut": "Alt + F7",
+    "action": "Move window (use arrow keys or mouse)",
+    "category": "window-management",
+    "subcategory": "Moving & Resizing",
+    "type": "default",
+    "tags": ["move", "drag", "position"]
+  },
+  {
+    "id": "wm-resize",
+    "shortcut": "Alt + F8",
+    "action": "Resize window (use arrow keys or mouse)",
+    "category": "window-management",
+    "subcategory": "Moving & Resizing",
+    "type": "default",
+    "tags": ["resize", "size", "dimensions"]
+  },
+  {
+    "id": "wm-toggle-maximize",
+    "shortcut": "Alt + F10",
+    "action": "Toggle maximize",
+    "category": "window-management",
+    "subcategory": "Moving & Resizing",
+    "type": "default",
+    "tags": ["maximize", "toggle"]
+  },
+  {
+    "id": "wm-menu",
+    "shortcut": "Alt + Space",
+    "action": "Open window menu",
+    "category": "window-management",
+    "subcategory": "Moving & Resizing",
+    "type": "default",
+    "tags": ["menu", "window menu", "context"]
+  },
+  {
+    "id": "wm-switch-windows",
+    "shortcut": "Alt + Tab",
+    "action": "Switch between windows",
+    "category": "window-management",
+    "subcategory": "Window Switching",
+    "type": "default",
+    "tags": ["switch", "alt tab", "focus"]
+  },
+  {
+    "id": "wm-switch-reverse",
+    "shortcut": "Alt + Shift + Tab",
+    "action": "Switch windows (reverse)",
+    "category": "window-management",
+    "subcategory": "Window Switching",
+    "type": "default",
+    "tags": ["switch", "reverse", "back"]
+  },
+  {
+    "id": "wm-switch-apps",
+    "shortcut": "Super + Tab",
+    "action": "Switch between applications",
+    "category": "window-management",
+    "subcategory": "Window Switching",
+    "type": "default",
+    "tags": ["switch", "applications", "app"]
+  },
+  {
+    "id": "wm-switch-same-app",
+    "shortcut": "Alt + `",
+    "action": "Switch between windows of the same app",
+    "category": "window-management",
+    "subcategory": "Window Switching",
+    "type": "default",
+    "tags": ["switch", "same app", "backtick"]
+  },
+  {
+    "id": "dm-activities",
+    "shortcut": "Super",
+    "action": "Open Activities overview",
+    "category": "desktop-management",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["activities", "overview", "super"]
+  },
+  {
+    "id": "dm-workspace-up",
+    "shortcut": "Super + Page Up",
+    "action": "Move to workspace above",
+    "category": "desktop-management",
+    "subcategory": "Workspace Switching",
+    "type": "default",
+    "tags": ["workspace", "switch", "up", "above"]
+  },
+  {
+    "id": "dm-workspace-down",
+    "shortcut": "Super + Page Down",
+    "action": "Move to workspace below",
+    "category": "desktop-management",
+    "subcategory": "Workspace Switching",
+    "type": "default",
+    "tags": ["workspace", "switch", "down", "below"]
+  },
+  {
+    "id": "dm-workspace-up-alt",
+    "shortcut": "Ctrl + Alt + ↑",
+    "action": "Move to workspace above (alt binding)",
+    "category": "desktop-management",
+    "subcategory": "Workspace Switching",
+    "type": "default",
+    "tags": ["workspace", "switch", "up", "alternative"]
+  },
+  {
+    "id": "dm-workspace-down-alt",
+    "shortcut": "Ctrl + Alt + ↓",
+    "action": "Move to workspace below (alt binding)",
+    "category": "desktop-management",
+    "subcategory": "Workspace Switching",
+    "type": "default",
+    "tags": ["workspace", "switch", "down", "alternative"]
+  },
+  {
+    "id": "dm-window-to-workspace-up",
+    "shortcut": "Super + Shift + Page Up",
+    "action": "Move current window to workspace above",
+    "category": "desktop-management",
+    "subcategory": "Window-to-Workspace",
+    "type": "default",
+    "tags": ["workspace", "move", "window", "up"]
+  },
+  {
+    "id": "dm-window-to-workspace-down",
+    "shortcut": "Super + Shift + Page Down",
+    "action": "Move current window to workspace below",
+    "category": "desktop-management",
+    "subcategory": "Window-to-Workspace",
+    "type": "default",
+    "tags": ["workspace", "move", "window", "down"]
+  },
+  {
+    "id": "dm-first-workspace",
+    "shortcut": "Super + Home",
+    "action": "Jump to first workspace",
+    "category": "desktop-management",
+    "subcategory": "Workspace Switching",
+    "type": "default",
+    "tags": ["workspace", "first", "home"]
+  },
+  {
+    "id": "dm-last-workspace",
+    "shortcut": "Super + End",
+    "action": "Jump to last workspace",
+    "category": "desktop-management",
+    "subcategory": "Workspace Switching",
+    "type": "default",
+    "tags": ["workspace", "last", "end"]
+  },
+  {
+    "id": "dm-lock-screen",
+    "shortcut": "Super + L",
+    "action": "Lock screen",
+    "category": "desktop-management",
+    "subcategory": "System",
+    "type": "default",
+    "tags": ["lock", "screen", "security"]
+  },
+  {
+    "id": "dm-show-desktop",
+    "shortcut": "Super + D",
+    "action": "Show desktop (minimize all)",
+    "category": "desktop-management",
+    "subcategory": "System",
+    "type": "default",
+    "tags": ["desktop", "show", "minimize all"]
+  },
+  {
+    "id": "dm-app-grid",
+    "shortcut": "Super + A",
+    "action": "Open application grid",
+    "category": "desktop-management",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["applications", "grid", "launcher"]
+  },
+  {
+    "id": "dm-quick-settings",
+    "shortcut": "Super + S",
+    "action": "Quick settings / calendar panel",
+    "category": "desktop-management",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["settings", "calendar", "panel", "quick"]
+  },
+  {
+    "id": "dm-terminal",
+    "shortcut": "Ctrl + Alt + T",
+    "action": "Open terminal",
+    "category": "desktop-management",
+    "subcategory": "System",
+    "type": "default",
+    "tags": ["terminal", "console", "command line"]
+  },
+  {
+    "id": "dm-logout",
+    "shortcut": "Ctrl + Alt + Delete",
+    "action": "Log out",
+    "category": "desktop-management",
+    "subcategory": "System",
+    "type": "default",
+    "tags": ["logout", "log out", "session"]
+  },
+  {
+    "id": "dm-screenshot",
+    "shortcut": "Print Screen",
+    "action": "Screenshot tool",
+    "category": "desktop-management",
+    "subcategory": "System",
+    "type": "default",
+    "tags": ["screenshot", "capture", "print screen"]
+  },
+  {
+    "id": "dm-screenshot-area",
+    "shortcut": "Shift + Print Screen",
+    "action": "Screenshot area selection",
+    "category": "desktop-management",
+    "subcategory": "System",
+    "type": "default",
+    "tags": ["screenshot", "area", "selection", "crop"]
+  },
+  {
+    "id": "dm-run-dialog",
+    "shortcut": "Alt + F2",
+    "action": "Run command dialog",
+    "category": "desktop-management",
+    "subcategory": "System",
+    "type": "default",
+    "tags": ["run", "command", "dialog", "execute"]
+  },
+  {
+    "id": "tm-new-tab",
+    "shortcut": "Ctrl + T",
+    "action": "Open new browser tab",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["new tab", "browser", "open"]
+  },
+  {
+    "id": "tm-close-tab",
+    "shortcut": "Ctrl + W",
+    "action": "Close current tab",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["close", "tab", "browser"]
+  },
+  {
+    "id": "tm-reopen-tab",
+    "shortcut": "Ctrl + Shift + T",
+    "action": "Reopen last closed tab",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["reopen", "restore", "closed tab", "undo"]
+  },
+  {
+    "id": "tm-next-tab",
+    "shortcut": "Ctrl + Tab",
+    "action": "Switch to next tab",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["next", "tab", "switch", "forward"]
+  },
+  {
+    "id": "tm-prev-tab",
+    "shortcut": "Ctrl + Shift + Tab",
+    "action": "Switch to previous tab",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["previous", "tab", "switch", "back"]
+  },
+  {
+    "id": "tm-tab-number",
+    "shortcut": "Ctrl + 1–8",
+    "action": "Switch to specific tab (1st through 8th)",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["tab", "number", "specific", "direct"]
+  },
+  {
+    "id": "tm-last-tab",
+    "shortcut": "Ctrl + 9",
+    "action": "Switch to last tab",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["last", "tab", "final"]
+  },
+  {
+    "id": "tm-move-tab-left",
+    "shortcut": "Ctrl + Shift + Page Up",
+    "action": "Move tab left",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["move", "tab", "left", "reorder"]
+  },
+  {
+    "id": "tm-move-tab-right",
+    "shortcut": "Ctrl + Shift + Page Down",
+    "action": "Move tab right",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs",
+    "type": "default",
+    "tags": ["move", "tab", "right", "reorder"]
+  },
+  {
+    "id": "tm-terminal-new-tab",
+    "shortcut": "Ctrl + Shift + T",
+    "action": "Open new terminal tab",
+    "category": "tab-management",
+    "subcategory": "Terminal Tabs",
+    "type": "default",
+    "tags": ["terminal", "new tab", "console"]
+  },
+  {
+    "id": "tm-terminal-close-tab",
+    "shortcut": "Ctrl + Shift + W",
+    "action": "Close terminal tab",
+    "category": "tab-management",
+    "subcategory": "Terminal Tabs",
+    "type": "default",
+    "tags": ["terminal", "close", "tab"]
+  },
+  {
+    "id": "tm-terminal-next-tab",
+    "shortcut": "Ctrl + Page Down",
+    "action": "Next terminal tab",
+    "category": "tab-management",
+    "subcategory": "Terminal Tabs",
+    "type": "default",
+    "tags": ["terminal", "next", "tab"]
+  },
+  {
+    "id": "tm-terminal-prev-tab",
+    "shortcut": "Ctrl + Page Up",
+    "action": "Previous terminal tab",
+    "category": "tab-management",
+    "subcategory": "Terminal Tabs",
+    "type": "default",
+    "tags": ["terminal", "previous", "tab"]
+  },
+  {
+    "id": "tm-file-manager-new-tab",
+    "shortcut": "Ctrl + T",
+    "action": "Open new file manager tab",
+    "category": "tab-management",
+    "subcategory": "File Manager Tabs",
+    "type": "default",
+    "tags": ["nautilus", "files", "new tab", "file manager"]
+  },
+  {
+    "id": "tm-file-manager-close-tab",
+    "shortcut": "Ctrl + W",
+    "action": "Close file manager tab",
+    "category": "tab-management",
+    "subcategory": "File Manager Tabs",
+    "type": "default",
+    "tags": ["nautilus", "files", "close tab", "file manager"]
+  }
+]

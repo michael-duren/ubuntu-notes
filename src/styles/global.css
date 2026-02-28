@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ubuntu-orange: #E95420;
+  --color-ubuntu-orange-dark: #C7401A;
+  --color-ubuntu-aubergine: #77216F;
+  --color-ubuntu-aubergine-dark: #5E2750;
+  --color-ubuntu-warm-grey: #AEA79F;
+  --color-ubuntu-cool-grey: #333333;
+  --color-ubuntu-text-grey: #111111;
+  --color-ubuntu-light-grey: #F7F7F7;
+  --color-ubuntu-mid-grey: #CDCDCD;
+
+  --font-family-sans: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: 'Ubuntu Mono', ui-monospace, monospace;
+}
+
+/* Surface colors that toggle at runtime */
+:root {
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F7F7F7;
+  --surface-tertiary: #EEEEEE;
+  --surface-card: #FFFFFF;
+  --surface-code: #F0F0F0;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --border-color: #E5E5E5;
+  --border-color-strong: #CDCDCD;
+  --kbd-bg: #F7F7F7;
+  --kbd-border: #CDCDCD;
+  --kbd-shadow: #B0B0B0;
+  --table-stripe: #F9F9F9;
+  --search-backdrop: rgba(0, 0, 0, 0.5);
+}
+
+.dark {
+  --surface-primary: #1A1A2E;
+  --surface-secondary: #16213E;
+  --surface-tertiary: #0F3460;
+  --surface-card: #1E1E3A;
+  --surface-code: #2A2A4A;
+  --text-primary: #E8E8E8;
+  --text-secondary: #B0B0C0;
+  --text-muted: #777790;
+  --border-color: #2E2E4E;
+  --border-color-strong: #444466;
+  --kbd-bg: #2A2A4A;
+  --kbd-border: #444466;
+  --kbd-shadow: #111122;
+  --table-stripe: #1E1E36;
+  --search-backdrop: rgba(0, 0, 0, 0.7);
+}
+
+/* Base styles */
+body {
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family-sans);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Keyboard shortcut styling */
+kbd {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: var(--font-family-mono);
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: var(--text-primary);
+  background-color: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 var(--kbd-shadow);
+  white-space: nowrap;
+}
+
+/* Guide content styles */
+.guide-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.guide-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.guide-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.guide-content ul,
+.guide-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.guide-content ul {
+  list-style-type: disc;
+}
+
+.guide-content ol {
+  list-style-type: decimal;
+}
+
+.guide-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.guide-content code {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+  padding: 2px 6px;
+  background-color: var(--surface-code);
+  border-radius: 4px;
+  color: #E95420;
+}
+
+.guide-content pre {
+  background-color: var(--surface-code);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.guide-content pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+.guide-content blockquote {
+  border-left: 4px solid #E95420;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
