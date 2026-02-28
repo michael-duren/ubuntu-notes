@@ -27,10 +27,22 @@ const { title, description = 'Ubuntu keyboard shortcuts cheatsheets and configur
     <!-- Inline dark mode script — runs before paint to prevent flash -->
     <script is:inline>
       (function() {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
+        function applyTheme() {
+          const theme = localStorage.getItem('theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
         }
+        applyTheme();
+        // Preserve dark class when view transitions swap the document
+        document.addEventListener('astro:before-swap', (e) => {
+          const theme = localStorage.getItem('theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            e.newDocument.documentElement.classList.add('dark');
+          }
+        });
       })();
     </script>
   </head>

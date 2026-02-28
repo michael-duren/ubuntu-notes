@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShortcutTable from '../../components/ShortcutTable.astro';
+import shortcuts from '../../data/shortcuts.json';
+
+const filtered = shortcuts.filter(s => s.category === 'volumes-drives');
+const groups: Record<string, typeof filtered> = {};
+for (const s of filtered) {
+  (groups[s.subcategory] ??= []).push(s);
+}
+---
+<BaseLayout title="Volumes & Drives Commands" description="Essential Linux commands for managing drives, partitions, filesystems, and disk space.">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+      <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
+      <span>/</span>
+      <a href="/cheatsheets" class="hover:text-ubuntu-orange transition-colors">Cheatsheets</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">Volumes & Drives</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Volumes & Drives Commands</h1>
+    <p class="mb-8" style="color: var(--text-secondary);">Essential Linux commands for managing drives, partitions, filesystems, and disk space.</p>
+
+    {Object.entries(groups).map(([subcategory, items]) => (
+      <ShortcutTable title={subcategory} shortcuts={items} />
+    ))}
+
+    <div class="mt-8 p-4 rounded-lg border" style="background-color: var(--surface-secondary); border-color: var(--border-color);">
+      <p class="text-sm" style="color: var(--text-secondary);">
+        Want to learn more? Check the <a href="/guides/volumes-drives" class="text-ubuntu-orange hover:underline font-medium">Volumes & Drives Configuration Guide</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

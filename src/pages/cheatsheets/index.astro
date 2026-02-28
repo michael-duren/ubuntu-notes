@@ -7,6 +7,7 @@ const windowCount = shortcuts.filter(s => s.category === 'window-management').le
 const desktopCount = shortcuts.filter(s => s.category === 'desktop-management').length;
 const tabCount = shortcuts.filter(s => s.category === 'tab-management').length;
 const editorCount = shortcuts.filter(s => s.category === 'text-editors').length;
+const volumeCount = shortcuts.filter(s => s.category === 'volumes-drives').length;
 ---
 <BaseLayout title="Cheat Sheets" description="Default Ubuntu keyboard shortcuts by category.">
   <div class="max-w-6xl mx-auto px-4 py-8">
@@ -48,6 +49,13 @@ const editorCount = shortcuts.filter(s => s.category === 'text-editors').length;
         href="/cheatsheets/text-editors"
         count={editorCount}
         icon="editor"
+      />
+      <CategoryCard
+        title="Volumes & Drives"
+        description="Commands for drives, partitions, mounting, and disk space."
+        href="/cheatsheets/volumes-drives"
+        count={volumeCount}
+        icon="drive"
       />
     </div>
   </div>

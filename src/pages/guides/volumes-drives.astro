@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+const guides = await getCollection('guides');
+const guide = guides.find(g => g.id === 'volumes-drives');
+if (!guide) throw new Error('Guide not found: volumes-drives');
+
+const { Content } = await render(guide);
+---
+<BaseLayout title={guide.data.title} description={guide.data.description}>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+      <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
+      <span>/</span>
+      <a href="/guides" class="hover:text-ubuntu-orange transition-colors">Guides</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">Volumes & Drives</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">{guide.data.title}</h1>
+    <p class="mb-8" style="color: var(--text-secondary);">{guide.data.description}</p>
+
+    <div class="guide-content">
+      <Content />
+    </div>
+  </div>
+</BaseLayout>

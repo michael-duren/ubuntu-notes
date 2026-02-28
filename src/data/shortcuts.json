@@ -934,5 +934,320 @@
     "subcategory": "File Operations",
     "type": "default",
     "tags": ["neovim", "vim", "open", "edit", "file"]
+  },
+  {
+    "id": "vd-df-h",
+    "shortcut": "df -h",
+    "action": "Show disk space usage (human-readable)",
+    "category": "volumes-drives",
+    "subcategory": "Checking Disk Space",
+    "type": "default",
+    "tags": ["disk", "space", "free", "usage", "df"]
+  },
+  {
+    "id": "vd-df-filter",
+    "shortcut": "df -h -x squashfs -x tmpfs",
+    "action": "Show disk space excluding snap/tmpfs",
+    "category": "volumes-drives",
+    "subcategory": "Checking Disk Space",
+    "type": "default",
+    "tags": ["disk", "space", "filter", "df"]
+  },
+  {
+    "id": "vd-du-sh",
+    "shortcut": "du -sh *",
+    "action": "Show sizes of items in current directory",
+    "category": "volumes-drives",
+    "subcategory": "Checking Disk Space",
+    "type": "default",
+    "tags": ["disk", "usage", "size", "directory", "du"]
+  },
+  {
+    "id": "vd-du-sorted",
+    "shortcut": "du -sh * | sort -h",
+    "action": "Show sizes sorted smallest to largest",
+    "category": "volumes-drives",
+    "subcategory": "Checking Disk Space",
+    "type": "default",
+    "tags": ["disk", "usage", "sort", "du"]
+  },
+  {
+    "id": "vd-ncdu",
+    "shortcut": "ncdu",
+    "action": "Interactive disk usage browser (TUI)",
+    "category": "volumes-drives",
+    "subcategory": "Checking Disk Space",
+    "type": "default",
+    "tags": ["disk", "usage", "interactive", "ncdu", "tui"]
+  },
+  {
+    "id": "vd-lsblk",
+    "shortcut": "lsblk",
+    "action": "List all block devices in tree format",
+    "category": "volumes-drives",
+    "subcategory": "Listing Drives & Partitions",
+    "type": "default",
+    "tags": ["list", "block", "devices", "drives", "lsblk"]
+  },
+  {
+    "id": "vd-lsblk-f",
+    "shortcut": "lsblk -f",
+    "action": "List block devices with filesystem and UUID",
+    "category": "volumes-drives",
+    "subcategory": "Listing Drives & Partitions",
+    "type": "default",
+    "tags": ["list", "filesystem", "uuid", "lsblk"]
+  },
+  {
+    "id": "vd-blkid",
+    "shortcut": "sudo blkid",
+    "action": "Show UUIDs and filesystem types",
+    "category": "volumes-drives",
+    "subcategory": "Listing Drives & Partitions",
+    "type": "default",
+    "tags": ["uuid", "filesystem", "blkid", "id"]
+  },
+  {
+    "id": "vd-fdisk-l",
+    "shortcut": "sudo fdisk -l",
+    "action": "List all disks and partition tables",
+    "category": "volumes-drives",
+    "subcategory": "Listing Drives & Partitions",
+    "type": "default",
+    "tags": ["fdisk", "partition", "list", "table"]
+  },
+  {
+    "id": "vd-findmnt",
+    "shortcut": "findmnt",
+    "action": "Show mounted filesystems as a tree",
+    "category": "volumes-drives",
+    "subcategory": "Listing Drives & Partitions",
+    "type": "default",
+    "tags": ["mount", "tree", "findmnt", "filesystem"]
+  },
+  {
+    "id": "vd-mount",
+    "shortcut": "sudo mount /dev/sdb1 /mnt",
+    "action": "Mount a partition to /mnt",
+    "category": "volumes-drives",
+    "subcategory": "Mounting & Unmounting",
+    "type": "default",
+    "tags": ["mount", "partition", "attach"]
+  },
+  {
+    "id": "vd-mount-ntfs",
+    "shortcut": "sudo mount -t ntfs-3g /dev/sdb1 /mnt",
+    "action": "Mount an NTFS partition",
+    "category": "volumes-drives",
+    "subcategory": "Mounting & Unmounting",
+    "type": "default",
+    "tags": ["mount", "ntfs", "windows"]
+  },
+  {
+    "id": "vd-mount-iso",
+    "shortcut": "sudo mount -o loop image.iso /mnt",
+    "action": "Mount an ISO file",
+    "category": "volumes-drives",
+    "subcategory": "Mounting & Unmounting",
+    "type": "default",
+    "tags": ["mount", "iso", "loop", "image"]
+  },
+  {
+    "id": "vd-umount",
+    "shortcut": "sudo umount /mnt",
+    "action": "Unmount a filesystem",
+    "category": "volumes-drives",
+    "subcategory": "Mounting & Unmounting",
+    "type": "default",
+    "tags": ["unmount", "umount", "detach"]
+  },
+  {
+    "id": "vd-mount-a",
+    "shortcut": "sudo mount -a",
+    "action": "Mount all entries in /etc/fstab",
+    "category": "volumes-drives",
+    "subcategory": "Mounting & Unmounting",
+    "type": "default",
+    "tags": ["mount", "fstab", "all", "auto"]
+  },
+  {
+    "id": "vd-eject",
+    "shortcut": "sudo eject /dev/sdb",
+    "action": "Safely eject a removable drive",
+    "category": "volumes-drives",
+    "subcategory": "Mounting & Unmounting",
+    "type": "default",
+    "tags": ["eject", "usb", "removable", "safe"]
+  },
+  {
+    "id": "vd-mkfs-ext4",
+    "shortcut": "sudo mkfs.ext4 /dev/sdb1",
+    "action": "Format partition as ext4",
+    "category": "volumes-drives",
+    "subcategory": "Formatting & Partitioning",
+    "type": "default",
+    "tags": ["format", "ext4", "mkfs", "filesystem"]
+  },
+  {
+    "id": "vd-mkfs-ntfs",
+    "shortcut": "sudo mkfs.ntfs /dev/sdb1",
+    "action": "Format partition as NTFS",
+    "category": "volumes-drives",
+    "subcategory": "Formatting & Partitioning",
+    "type": "default",
+    "tags": ["format", "ntfs", "mkfs", "windows"]
+  },
+  {
+    "id": "vd-mkfs-fat32",
+    "shortcut": "sudo mkfs.vfat -F 32 /dev/sdb1",
+    "action": "Format partition as FAT32",
+    "category": "volumes-drives",
+    "subcategory": "Formatting & Partitioning",
+    "type": "default",
+    "tags": ["format", "fat32", "vfat", "usb"]
+  },
+  {
+    "id": "vd-mkfs-exfat",
+    "shortcut": "sudo mkfs.exfat /dev/sdb1",
+    "action": "Format partition as exFAT",
+    "category": "volumes-drives",
+    "subcategory": "Formatting & Partitioning",
+    "type": "default",
+    "tags": ["format", "exfat", "mkfs", "cross-platform"]
+  },
+  {
+    "id": "vd-fdisk",
+    "shortcut": "sudo fdisk /dev/sdb",
+    "action": "Interactive partition editor (MBR/GPT)",
+    "category": "volumes-drives",
+    "subcategory": "Formatting & Partitioning",
+    "type": "default",
+    "tags": ["partition", "fdisk", "interactive", "mbr", "gpt"]
+  },
+  {
+    "id": "vd-parted",
+    "shortcut": "sudo parted /dev/sdb print",
+    "action": "Print partition table with parted",
+    "category": "volumes-drives",
+    "subcategory": "Formatting & Partitioning",
+    "type": "default",
+    "tags": ["partition", "parted", "gpt", "table"]
+  },
+  {
+    "id": "vd-smart-health",
+    "shortcut": "sudo smartctl -H /dev/sda",
+    "action": "Check SMART drive health status",
+    "category": "volumes-drives",
+    "subcategory": "Drive Health & Monitoring",
+    "type": "default",
+    "tags": ["smart", "health", "smartctl", "check"]
+  },
+  {
+    "id": "vd-smart-all",
+    "shortcut": "sudo smartctl -a /dev/sda",
+    "action": "View all SMART data for a drive",
+    "category": "volumes-drives",
+    "subcategory": "Drive Health & Monitoring",
+    "type": "default",
+    "tags": ["smart", "data", "smartctl", "info"]
+  },
+  {
+    "id": "vd-iostat",
+    "shortcut": "iostat -x 1",
+    "action": "Real-time disk I/O statistics",
+    "category": "volumes-drives",
+    "subcategory": "Drive Health & Monitoring",
+    "type": "default",
+    "tags": ["io", "stats", "iostat", "performance"]
+  },
+  {
+    "id": "vd-iotop",
+    "shortcut": "sudo iotop",
+    "action": "Interactive I/O monitor by process",
+    "category": "volumes-drives",
+    "subcategory": "Drive Health & Monitoring",
+    "type": "default",
+    "tags": ["io", "monitor", "iotop", "process"]
+  },
+  {
+    "id": "vd-swapon",
+    "shortcut": "swapon --show",
+    "action": "Show active swap devices",
+    "category": "volumes-drives",
+    "subcategory": "Swap & LVM",
+    "type": "default",
+    "tags": ["swap", "show", "swapon", "memory"]
+  },
+  {
+    "id": "vd-free",
+    "shortcut": "free -h",
+    "action": "Show RAM and swap usage",
+    "category": "volumes-drives",
+    "subcategory": "Swap & LVM",
+    "type": "default",
+    "tags": ["free", "memory", "ram", "swap"]
+  },
+  {
+    "id": "vd-pvs",
+    "shortcut": "sudo pvs",
+    "action": "List LVM physical volumes",
+    "category": "volumes-drives",
+    "subcategory": "Swap & LVM",
+    "type": "default",
+    "tags": ["lvm", "physical", "volume", "pvs"]
+  },
+  {
+    "id": "vd-vgs",
+    "shortcut": "sudo vgs",
+    "action": "List LVM volume groups",
+    "category": "volumes-drives",
+    "subcategory": "Swap & LVM",
+    "type": "default",
+    "tags": ["lvm", "volume", "group", "vgs"]
+  },
+  {
+    "id": "vd-lvs",
+    "shortcut": "sudo lvs",
+    "action": "List LVM logical volumes",
+    "category": "volumes-drives",
+    "subcategory": "Swap & LVM",
+    "type": "default",
+    "tags": ["lvm", "logical", "volume", "lvs"]
+  },
+  {
+    "id": "vd-lsusb",
+    "shortcut": "lsusb",
+    "action": "List connected USB devices",
+    "category": "volumes-drives",
+    "subcategory": "USB & Removable Drives",
+    "type": "default",
+    "tags": ["usb", "list", "devices", "lsusb"]
+  },
+  {
+    "id": "vd-dmesg",
+    "shortcut": "dmesg --follow",
+    "action": "Watch kernel messages (detect new devices)",
+    "category": "volumes-drives",
+    "subcategory": "USB & Removable Drives",
+    "type": "default",
+    "tags": ["dmesg", "kernel", "messages", "detect", "plug"]
+  },
+  {
+    "id": "vd-udisksctl",
+    "shortcut": "udisksctl unmount -b /dev/sdb1",
+    "action": "Safely unmount via udisks",
+    "category": "volumes-drives",
+    "subcategory": "USB & Removable Drives",
+    "type": "default",
+    "tags": ["udisks", "unmount", "safe", "usb"]
+  },
+  {
+    "id": "vd-udisksctl-poweroff",
+    "shortcut": "udisksctl power-off -b /dev/sdb",
+    "action": "Power off a USB drive safely",
+    "category": "volumes-drives",
+    "subcategory": "USB & Removable Drives",
+    "type": "default",
+    "tags": ["udisks", "power", "off", "eject", "usb"]
   }
 ]
