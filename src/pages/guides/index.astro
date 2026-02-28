@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+---
+<BaseLayout title="Configuration Guides" description="Learn how to customize and configure Ubuntu keyboard shortcuts.">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+      <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">Guides</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Configuration Guides</h1>
+    <p class="mb-8" style="color: var(--text-secondary);">Learn how to customize and configure shortcuts.</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <CategoryCard
+        title="Window Management"
+        description="Customize window snapping, tiling, and keybindings."
+        href="/guides/window-management"
+        icon="guide"
+      />
+      <CategoryCard
+        title="Desktop & Workspaces"
+        description="Configure workspace behavior, hot corners, and navigation."
+        href="/guides/desktop-management"
+        icon="guide"
+      />
+      <CategoryCard
+        title="Tab Management"
+        description="Customize tab shortcuts across browsers and terminals."
+        href="/guides/tab-management"
+        icon="guide"
+      />
+      <CategoryCard
+        title="Text Editors"
+        description="Configure Neovim, Vim, VS Code, and other editors."
+        href="/guides/text-editors"
+        icon="guide"
+      />
+      <CategoryCard
+        title="Linux Filesystem"
+        description="Beginner's guide to the Ubuntu directory structure."
+        href="/guides/linux-filesystem"
+        icon="folder"
+      />
+    </div>
+  </div>
+</BaseLayout>

@@ -6,6 +6,7 @@ import shortcuts from '../data/shortcuts.json';
 const windowCount = shortcuts.filter(s => s.category === 'window-management').length;
 const desktopCount = shortcuts.filter(s => s.category === 'desktop-management').length;
 const tabCount = shortcuts.filter(s => s.category === 'tab-management').length;
+const editorCount = shortcuts.filter(s => s.category === 'text-editors').length;
 ---
 <BaseLayout title="Home">
   <!-- Hero -->
@@ -55,6 +56,13 @@ const tabCount = shortcuts.filter(s => s.category === 'tab-management').length;
           count={tabCount}
           icon="tab"
         />
+        <CategoryCard
+          title="Text Editors"
+          description="Neovim/Vim modes, navigation, editing, and splits."
+          href="/cheatsheets/text-editors"
+          count={editorCount}
+          icon="editor"
+        />
       </div>
     </section>
 
@@ -80,6 +88,18 @@ const tabCount = shortcuts.filter(s => s.category === 'tab-management').length;
           description="Customize tab shortcuts across browsers and terminals."
           href="/guides/tab-management"
           icon="guide"
+        />
+        <CategoryCard
+          title="Text Editors"
+          description="Configure Neovim, Vim, VS Code, and other editors."
+          href="/guides/text-editors"
+          icon="guide"
+        />
+        <CategoryCard
+          title="Linux Filesystem"
+          description="Beginner's guide to the Ubuntu directory structure."
+          href="/guides/linux-filesystem"
+          icon="folder"
         />
       </div>
     </section>

@@ -3,13 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ShortcutTable from '../../components/ShortcutTable.astro';
 import shortcuts from '../../data/shortcuts.json';
 
-const filtered = shortcuts.filter(s => s.category === 'desktop-management');
+const filtered = shortcuts.filter(s => s.category === 'text-editors');
 const groups: Record<string, typeof filtered> = {};
 for (const s of filtered) {
   (groups[s.subcategory] ??= []).push(s);
 }
 ---
-<BaseLayout title="Desktop Management Shortcuts" description="Ubuntu keyboard shortcuts for workspaces, navigation, and system actions.">
+<BaseLayout title="Text Editor Shortcuts" description="Neovim and Vim keyboard shortcuts — modes, navigation, editing, search, splits, and file operations.">
   <div class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
     <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
@@ -17,11 +17,11 @@ for (const s of filtered) {
       <span>/</span>
       <a href="/cheatsheets" class="hover:text-ubuntu-orange transition-colors">Cheatsheets</a>
       <span>/</span>
-      <span style="color: var(--text-primary);">Desktop Management</span>
+      <span style="color: var(--text-primary);">Text Editors</span>
     </nav>
 
-    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Desktop Management Shortcuts</h1>
-    <p class="mb-8" style="color: var(--text-secondary);">Default GNOME shortcuts for workspaces, system actions, and desktop navigation.</p>
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Text Editor Shortcuts</h1>
+    <p class="mb-8" style="color: var(--text-secondary);">Essential Neovim/Vim keyboard shortcuts for modes, navigation, editing, searching, and managing splits and buffers.</p>
 
     {Object.entries(groups).map(([subcategory, items]) => (
       <ShortcutTable title={subcategory} shortcuts={items} />
@@ -29,7 +29,7 @@ for (const s of filtered) {
 
     <div class="mt-8 p-4 rounded-lg border" style="background-color: var(--surface-secondary); border-color: var(--border-color);">
       <p class="text-sm" style="color: var(--text-secondary);">
-        Want to customize these shortcuts? Check the <a href="/guides/desktop-management" class="text-ubuntu-orange hover:underline font-medium">Desktop Configuration Guide</a>.
+        Want to configure your editor? Check the <a href="/guides/text-editors" class="text-ubuntu-orange hover:underline font-medium">Text Editor Configuration Guide</a>.
       </p>
     </div>
   </div>

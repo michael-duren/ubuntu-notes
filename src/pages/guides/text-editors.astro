@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 
 const guides = await getCollection('guides');
-const guide = guides.find(g => g.id === 'tab-management');
-if (!guide) throw new Error('Guide not found: tab-management');
+const guide = guides.find(g => g.id === 'text-editors');
+if (!guide) throw new Error('Guide not found: text-editors');
 
 const { Content } = await render(guide);
 ---
@@ -16,7 +16,7 @@ const { Content } = await render(guide);
       <span>/</span>
       <a href="/guides" class="hover:text-ubuntu-orange transition-colors">Guides</a>
       <span>/</span>
-      <span style="color: var(--text-primary);">Tab Management</span>
+      <span style="color: var(--text-primary);">Text Editors</span>
     </nav>
 
     <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">{guide.data.title}</h1>
@@ -28,7 +28,7 @@ const { Content } = await render(guide);
 
     <div class="mt-12 p-4 rounded-lg border" style="background-color: var(--surface-secondary); border-color: var(--border-color);">
       <p class="text-sm" style="color: var(--text-secondary);">
-        See the default shortcuts: <a href="/cheatsheets/tab-management" class="text-ubuntu-orange hover:underline font-medium">Tab Management Cheatsheet</a>
+        See the default shortcuts: <a href="/cheatsheets/text-editors" class="text-ubuntu-orange hover:underline font-medium">Text Editor Cheatsheet</a>
       </p>
     </div>
   </div>

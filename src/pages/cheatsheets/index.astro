@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import shortcuts from '../../data/shortcuts.json';
+
+const windowCount = shortcuts.filter(s => s.category === 'window-management').length;
+const desktopCount = shortcuts.filter(s => s.category === 'desktop-management').length;
+const tabCount = shortcuts.filter(s => s.category === 'tab-management').length;
+const editorCount = shortcuts.filter(s => s.category === 'text-editors').length;
+---
+<BaseLayout title="Cheat Sheets" description="Default Ubuntu keyboard shortcuts by category.">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+      <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">Cheatsheets</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Cheat Sheets</h1>
+    <p class="mb-8" style="color: var(--text-secondary);">Default keyboard shortcuts by category.</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <CategoryCard
+        title="Window Management"
+        description="Snap, move, resize, and switch between windows."
+        href="/cheatsheets/window-management"
+        count={windowCount}
+        icon="window"
+      />
+      <CategoryCard
+        title="Desktop Management"
+        description="Workspaces, system shortcuts, and navigation."
+        href="/cheatsheets/desktop-management"
+        count={desktopCount}
+        icon="desktop"
+      />
+      <CategoryCard
+        title="Tab Management"
+        description="Browser, terminal, and file manager tabs."
+        href="/cheatsheets/tab-management"
+        count={tabCount}
+        icon="tab"
+      />
+      <CategoryCard
+        title="Text Editors"
+        description="Neovim/Vim modes, navigation, editing, and splits."
+        href="/cheatsheets/text-editors"
+        count={editorCount}
+        icon="editor"
+      />
+    </div>
+  </div>
+</BaseLayout>

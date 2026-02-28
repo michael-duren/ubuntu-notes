@@ -11,7 +11,19 @@ Tab management shortcuts are typically application-specific rather than system-w
 
 ## Browser Tab Shortcuts
 
-Most browsers (Firefox, Chrome, Chromium) share the same tab shortcuts. These are generally not configurable through system settings but can be modified through browser extensions or config files.
+> **Important:** On Linux, Firefox and Chrome use **different** shortcuts for switching to a specific tab by number.
+
+### Default Tab Shortcuts
+
+| Action | Firefox (Linux) | Chrome/Chromium (Linux) |
+|---|---|---|
+| Switch to tab 1–8 | `Alt + 1–8` | `Ctrl + 1–8` |
+| Switch to last tab | `Alt + 9` | `Ctrl + 9` |
+| New tab | `Ctrl + T` | `Ctrl + T` |
+| Close tab | `Ctrl + W` | `Ctrl + W` |
+| Next tab | `Ctrl + Tab` | `Ctrl + Tab` |
+| Previous tab | `Ctrl + Shift + Tab` | `Ctrl + Shift + Tab` |
+| Reopen closed tab | `Ctrl + Shift + T` | `Ctrl + Shift + T` |
 
 ### Firefox Custom Shortcuts
 
@@ -25,6 +37,17 @@ Most browsers (Firefox, Chrome, Chromium) share the same tab shortcuts. These ar
 Navigate to `chrome://extensions/shortcuts` to configure extension-specific keyboard shortcuts.
 
 ## GNOME Terminal
+
+### Default Terminal Tab Shortcuts
+
+| Action | Shortcut |
+|---|---|
+| New tab | `Ctrl + Shift + T` |
+| Close tab | `Ctrl + Shift + W` |
+| Next tab | `Ctrl + Page Down` |
+| Previous tab | `Ctrl + Page Up` |
+| Switch to tab 1–9 | `Alt + 1–9` |
+| Switch to tab 10 | `Alt + 0` |
 
 ### Customizing Terminal Tab Shortcuts
 

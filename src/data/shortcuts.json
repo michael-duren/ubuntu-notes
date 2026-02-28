@@ -351,22 +351,40 @@
     "tags": ["previous", "tab", "switch", "back"]
   },
   {
-    "id": "tm-tab-number",
-    "shortcut": "Ctrl + 1–8",
-    "action": "Switch to specific tab (1st through 8th)",
+    "id": "tm-tab-number-firefox",
+    "shortcut": "Alt + 1–8",
+    "action": "Switch to specific tab in Firefox (1st through 8th)",
     "category": "tab-management",
-    "subcategory": "Browser Tabs",
+    "subcategory": "Browser Tabs (Firefox)",
     "type": "default",
-    "tags": ["tab", "number", "specific", "direct"]
+    "tags": ["tab", "number", "specific", "direct", "firefox", "alt"]
   },
   {
-    "id": "tm-last-tab",
-    "shortcut": "Ctrl + 9",
-    "action": "Switch to last tab",
+    "id": "tm-last-tab-firefox",
+    "shortcut": "Alt + 9",
+    "action": "Switch to last tab in Firefox",
     "category": "tab-management",
-    "subcategory": "Browser Tabs",
+    "subcategory": "Browser Tabs (Firefox)",
     "type": "default",
-    "tags": ["last", "tab", "final"]
+    "tags": ["last", "tab", "final", "firefox"]
+  },
+  {
+    "id": "tm-tab-number-chrome",
+    "shortcut": "Ctrl + 1–8",
+    "action": "Switch to specific tab in Chrome/Chromium (1st through 8th)",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs (Chrome)",
+    "type": "default",
+    "tags": ["tab", "number", "specific", "direct", "chrome", "chromium"]
+  },
+  {
+    "id": "tm-last-tab-chrome",
+    "shortcut": "Ctrl + 9",
+    "action": "Switch to last tab in Chrome/Chromium",
+    "category": "tab-management",
+    "subcategory": "Browser Tabs (Chrome)",
+    "type": "default",
+    "tags": ["last", "tab", "final", "chrome", "chromium"]
   },
   {
     "id": "tm-move-tab-left",
@@ -405,6 +423,24 @@
     "tags": ["terminal", "close", "tab"]
   },
   {
+    "id": "tm-terminal-tab-number",
+    "shortcut": "Alt + 1–9",
+    "action": "Switch to specific terminal tab (1st through 9th)",
+    "category": "tab-management",
+    "subcategory": "Terminal Tabs",
+    "type": "default",
+    "tags": ["terminal", "tab", "number", "specific", "direct", "alt"]
+  },
+  {
+    "id": "tm-terminal-tab-10",
+    "shortcut": "Alt + 0",
+    "action": "Switch to 10th terminal tab",
+    "category": "tab-management",
+    "subcategory": "Terminal Tabs",
+    "type": "default",
+    "tags": ["terminal", "tab", "tenth", "alt"]
+  },
+  {
     "id": "tm-terminal-next-tab",
     "shortcut": "Ctrl + Page Down",
     "action": "Next terminal tab",
@@ -439,5 +475,464 @@
     "subcategory": "File Manager Tabs",
     "type": "default",
     "tags": ["nautilus", "files", "close tab", "file manager"]
+  },
+  {
+    "id": "te-normal-mode",
+    "shortcut": "Esc",
+    "action": "Return to Normal mode",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "mode", "normal", "escape"]
+  },
+  {
+    "id": "te-insert-mode",
+    "shortcut": "i",
+    "action": "Enter Insert mode (before cursor)",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "insert", "mode", "type"]
+  },
+  {
+    "id": "te-insert-append",
+    "shortcut": "a",
+    "action": "Enter Insert mode (after cursor)",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "insert", "append"]
+  },
+  {
+    "id": "te-insert-line-end",
+    "shortcut": "A",
+    "action": "Insert at end of line",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "insert", "end", "line"]
+  },
+  {
+    "id": "te-open-below",
+    "shortcut": "o",
+    "action": "Open new line below and enter Insert mode",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "open", "line", "below"]
+  },
+  {
+    "id": "te-visual-mode",
+    "shortcut": "v",
+    "action": "Enter Visual mode (character select)",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "visual", "select", "mode"]
+  },
+  {
+    "id": "te-visual-line",
+    "shortcut": "V",
+    "action": "Enter Visual Line mode",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "visual", "line", "select"]
+  },
+  {
+    "id": "te-visual-block",
+    "shortcut": "Ctrl + v",
+    "action": "Enter Visual Block mode",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "visual", "block", "column"]
+  },
+  {
+    "id": "te-command-mode",
+    "shortcut": ":",
+    "action": "Enter Command-line mode",
+    "category": "text-editors",
+    "subcategory": "Modes",
+    "type": "default",
+    "tags": ["neovim", "vim", "command", "ex", "mode"]
+  },
+  {
+    "id": "te-nav-word-fwd",
+    "shortcut": "w",
+    "action": "Jump forward to start of next word",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "word", "forward", "jump"]
+  },
+  {
+    "id": "te-nav-word-back",
+    "shortcut": "b",
+    "action": "Jump backward to start of previous word",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "word", "backward", "jump"]
+  },
+  {
+    "id": "te-nav-line-start",
+    "shortcut": "0",
+    "action": "Jump to start of line",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "line", "start", "beginning"]
+  },
+  {
+    "id": "te-nav-line-end",
+    "shortcut": "$",
+    "action": "Jump to end of line",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "line", "end"]
+  },
+  {
+    "id": "te-nav-file-top",
+    "shortcut": "gg",
+    "action": "Jump to top of file",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "top", "file", "beginning"]
+  },
+  {
+    "id": "te-nav-file-bottom",
+    "shortcut": "G",
+    "action": "Jump to bottom of file",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "bottom", "file", "end"]
+  },
+  {
+    "id": "te-scroll-down",
+    "shortcut": "Ctrl + d",
+    "action": "Scroll half page down",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "scroll", "down", "page"]
+  },
+  {
+    "id": "te-scroll-up",
+    "shortcut": "Ctrl + u",
+    "action": "Scroll half page up",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "scroll", "up", "page"]
+  },
+  {
+    "id": "te-match-bracket",
+    "shortcut": "%",
+    "action": "Jump to matching bracket",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "bracket", "matching", "paren"]
+  },
+  {
+    "id": "te-find-char",
+    "shortcut": "f{char}",
+    "action": "Jump to next occurrence of character",
+    "category": "text-editors",
+    "subcategory": "Navigation",
+    "type": "default",
+    "tags": ["neovim", "vim", "find", "character", "jump"]
+  },
+  {
+    "id": "te-delete-line",
+    "shortcut": "dd",
+    "action": "Delete entire line",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "delete", "line", "cut"]
+  },
+  {
+    "id": "te-delete-word",
+    "shortcut": "dw",
+    "action": "Delete from cursor to next word",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "delete", "word"]
+  },
+  {
+    "id": "te-delete-to-end",
+    "shortcut": "D",
+    "action": "Delete to end of line",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "delete", "end", "line"]
+  },
+  {
+    "id": "te-change-word",
+    "shortcut": "ciw",
+    "action": "Change inner word",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "change", "word", "replace"]
+  },
+  {
+    "id": "te-change-line",
+    "shortcut": "cc",
+    "action": "Change entire line",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "change", "line", "replace"]
+  },
+  {
+    "id": "te-yank-line",
+    "shortcut": "yy",
+    "action": "Yank (copy) entire line",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "yank", "copy", "line"]
+  },
+  {
+    "id": "te-paste-after",
+    "shortcut": "p",
+    "action": "Paste after cursor",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "paste", "put", "after"]
+  },
+  {
+    "id": "te-undo",
+    "shortcut": "u",
+    "action": "Undo last change",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "undo", "revert"]
+  },
+  {
+    "id": "te-redo",
+    "shortcut": "Ctrl + r",
+    "action": "Redo last undone change",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "redo", "repeat"]
+  },
+  {
+    "id": "te-dot-repeat",
+    "shortcut": ".",
+    "action": "Repeat last change",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "repeat", "dot", "last"]
+  },
+  {
+    "id": "te-indent",
+    "shortcut": ">>",
+    "action": "Indent current line",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "indent", "shift", "right"]
+  },
+  {
+    "id": "te-outdent",
+    "shortcut": "<<",
+    "action": "Outdent current line",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "outdent", "shift", "left"]
+  },
+  {
+    "id": "te-join-lines",
+    "shortcut": "J",
+    "action": "Join current line with line below",
+    "category": "text-editors",
+    "subcategory": "Editing",
+    "type": "default",
+    "tags": ["neovim", "vim", "join", "lines", "merge"]
+  },
+  {
+    "id": "te-search-fwd",
+    "shortcut": "/pattern",
+    "action": "Search forward for pattern",
+    "category": "text-editors",
+    "subcategory": "Search & Replace",
+    "type": "default",
+    "tags": ["neovim", "vim", "search", "find", "forward"]
+  },
+  {
+    "id": "te-search-back",
+    "shortcut": "?pattern",
+    "action": "Search backward for pattern",
+    "category": "text-editors",
+    "subcategory": "Search & Replace",
+    "type": "default",
+    "tags": ["neovim", "vim", "search", "find", "backward"]
+  },
+  {
+    "id": "te-search-next",
+    "shortcut": "n",
+    "action": "Jump to next search match",
+    "category": "text-editors",
+    "subcategory": "Search & Replace",
+    "type": "default",
+    "tags": ["neovim", "vim", "search", "next", "match"]
+  },
+  {
+    "id": "te-search-prev",
+    "shortcut": "N",
+    "action": "Jump to previous search match",
+    "category": "text-editors",
+    "subcategory": "Search & Replace",
+    "type": "default",
+    "tags": ["neovim", "vim", "search", "previous", "match"]
+  },
+  {
+    "id": "te-search-word",
+    "shortcut": "*",
+    "action": "Search for word under cursor",
+    "category": "text-editors",
+    "subcategory": "Search & Replace",
+    "type": "default",
+    "tags": ["neovim", "vim", "search", "word", "cursor"]
+  },
+  {
+    "id": "te-replace-all",
+    "shortcut": ":%s/old/new/g",
+    "action": "Replace all occurrences in file",
+    "category": "text-editors",
+    "subcategory": "Search & Replace",
+    "type": "default",
+    "tags": ["neovim", "vim", "replace", "substitute", "all"]
+  },
+  {
+    "id": "te-split-horiz",
+    "shortcut": "Ctrl+w s",
+    "action": "Horizontal split",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "split", "horizontal", "window"]
+  },
+  {
+    "id": "te-split-vert",
+    "shortcut": "Ctrl+w v",
+    "action": "Vertical split",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "split", "vertical", "window"]
+  },
+  {
+    "id": "te-split-navigate",
+    "shortcut": "Ctrl+w h/j/k/l",
+    "action": "Navigate between splits",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "split", "navigate", "move"]
+  },
+  {
+    "id": "te-split-close",
+    "shortcut": "Ctrl+w q",
+    "action": "Close current split",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "split", "close", "quit"]
+  },
+  {
+    "id": "te-split-equal",
+    "shortcut": "Ctrl+w =",
+    "action": "Equalize split sizes",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "split", "equal", "resize"]
+  },
+  {
+    "id": "te-buf-next",
+    "shortcut": ":bn",
+    "action": "Next buffer",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "buffer", "next"]
+  },
+  {
+    "id": "te-buf-prev",
+    "shortcut": ":bp",
+    "action": "Previous buffer",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "buffer", "previous"]
+  },
+  {
+    "id": "te-buf-close",
+    "shortcut": ":bd",
+    "action": "Close current buffer",
+    "category": "text-editors",
+    "subcategory": "Splits & Buffers",
+    "type": "default",
+    "tags": ["neovim", "vim", "buffer", "close", "delete"]
+  },
+  {
+    "id": "te-save",
+    "shortcut": ":w",
+    "action": "Save file",
+    "category": "text-editors",
+    "subcategory": "File Operations",
+    "type": "default",
+    "tags": ["neovim", "vim", "save", "write", "file"]
+  },
+  {
+    "id": "te-quit",
+    "shortcut": ":q",
+    "action": "Quit (fails if unsaved changes)",
+    "category": "text-editors",
+    "subcategory": "File Operations",
+    "type": "default",
+    "tags": ["neovim", "vim", "quit", "exit", "close"]
+  },
+  {
+    "id": "te-save-quit",
+    "shortcut": ":wq or :x",
+    "action": "Save and quit",
+    "category": "text-editors",
+    "subcategory": "File Operations",
+    "type": "default",
+    "tags": ["neovim", "vim", "save", "quit", "exit"]
+  },
+  {
+    "id": "te-force-quit",
+    "shortcut": ":q!",
+    "action": "Quit without saving",
+    "category": "text-editors",
+    "subcategory": "File Operations",
+    "type": "default",
+    "tags": ["neovim", "vim", "quit", "force", "discard"]
+  },
+  {
+    "id": "te-open-file",
+    "shortcut": ":e filename",
+    "action": "Open file in buffer",
+    "category": "text-editors",
+    "subcategory": "File Operations",
+    "type": "default",
+    "tags": ["neovim", "vim", "open", "edit", "file"]
   }
 ]
