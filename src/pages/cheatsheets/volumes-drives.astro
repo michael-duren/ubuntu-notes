@@ -9,10 +9,19 @@ for (const s of filtered) {
   (groups[s.subcategory] ??= []).push(s);
 }
 ---
-<BaseLayout title="Volumes & Drives Commands" description="Essential Linux commands for managing drives, partitions, filesystems, and disk space.">
+<BaseLayout
+  title="Linux Drive & Partition Commands Cheatsheet"
+  description="Essential Linux commands for managing drives, partitions, filesystems, and disk space."
+  keywords="linux drive commands, mount drive ubuntu, partition linux, fdisk lsblk"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Cheatsheets', url: '/cheatsheets' },
+    { name: 'Volumes & Drives', url: '/cheatsheets/volumes-drives' },
+  ]}
+>
   <div class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
       <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
       <span>/</span>
       <a href="/cheatsheets" class="hover:text-ubuntu-orange transition-colors">Cheatsheets</a>
@@ -20,7 +29,7 @@ for (const s of filtered) {
       <span style="color: var(--text-primary);">Volumes & Drives</span>
     </nav>
 
-    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Volumes & Drives Commands</h1>
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Linux Drive & Partition Commands</h1>
     <p class="mb-8" style="color: var(--text-secondary);">Essential Linux commands for managing drives, partitions, filesystems, and disk space.</p>
 
     {Object.entries(groups).map(([subcategory, items]) => (

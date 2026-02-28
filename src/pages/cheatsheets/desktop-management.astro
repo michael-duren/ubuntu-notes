@@ -9,10 +9,19 @@ for (const s of filtered) {
   (groups[s.subcategory] ??= []).push(s);
 }
 ---
-<BaseLayout title="Desktop Management Shortcuts" description="Ubuntu keyboard shortcuts for workspaces, navigation, and system actions.">
+<BaseLayout
+  title="Ubuntu Desktop & Workspace Shortcuts"
+  description="Ubuntu keyboard shortcuts for workspaces, navigation, and system actions."
+  keywords="ubuntu workspace shortcuts, gnome desktop shortcuts, switch workspace ubuntu"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Cheatsheets', url: '/cheatsheets' },
+    { name: 'Desktop Management', url: '/cheatsheets/desktop-management' },
+  ]}
+>
   <div class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
       <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
       <span>/</span>
       <a href="/cheatsheets" class="hover:text-ubuntu-orange transition-colors">Cheatsheets</a>
@@ -20,7 +29,7 @@ for (const s of filtered) {
       <span style="color: var(--text-primary);">Desktop Management</span>
     </nav>
 
-    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Desktop Management Shortcuts</h1>
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Ubuntu Desktop & Workspace Shortcuts</h1>
     <p class="mb-8" style="color: var(--text-secondary);">Default GNOME shortcuts for workspaces, system actions, and desktop navigation.</p>
 
     {Object.entries(groups).map(([subcategory, items]) => (

@@ -2,10 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 ---
-<BaseLayout title="Configuration Guides" description="Learn how to customize and configure Ubuntu keyboard shortcuts.">
+<BaseLayout
+  title="Configuration Guides"
+  description="Learn how to customize and configure Ubuntu keyboard shortcuts."
+  keywords="ubuntu configuration guide, customize ubuntu shortcuts, gnome settings"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Guides', url: '/guides' },
+  ]}
+>
   <div class="max-w-6xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
       <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
       <span>/</span>
       <span style="color: var(--text-primary);">Guides</span>

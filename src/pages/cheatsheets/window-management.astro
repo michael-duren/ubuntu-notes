@@ -9,10 +9,19 @@ for (const s of filtered) {
   (groups[s.subcategory] ??= []).push(s);
 }
 ---
-<BaseLayout title="Window Management Shortcuts" description="Default Ubuntu keyboard shortcuts for managing windows — snap, resize, move, and switch.">
+<BaseLayout
+  title="Ubuntu Window Management Shortcuts"
+  description="Default Ubuntu keyboard shortcuts for managing windows — snap, resize, move, and switch."
+  keywords="ubuntu window shortcuts, snap window ubuntu, tile windows ubuntu, gnome window management"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Cheatsheets', url: '/cheatsheets' },
+    { name: 'Window Management', url: '/cheatsheets/window-management' },
+  ]}
+>
   <div class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
       <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
       <span>/</span>
       <a href="/cheatsheets" class="hover:text-ubuntu-orange transition-colors">Cheatsheets</a>
@@ -20,7 +29,7 @@ for (const s of filtered) {
       <span style="color: var(--text-primary);">Window Management</span>
     </nav>
 
-    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Window Management Shortcuts</h1>
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">Ubuntu Window Management Shortcuts</h1>
     <p class="mb-8" style="color: var(--text-secondary);">Default GNOME keyboard shortcuts for snapping, moving, resizing, and switching windows.</p>
 
     {Object.entries(groups).map(([subcategory, items]) => (

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ubuntu.michaelduren.com/sitemap-index.xml

@@ -8,10 +8,19 @@ if (!guide) throw new Error('Guide not found: linux-filesystem');
 
 const { Content } = await render(guide);
 ---
-<BaseLayout title={guide.data.title} description={guide.data.description}>
+<BaseLayout
+  title={guide.data.title}
+  description={guide.data.description}
+  keywords="linux filesystem guide, ubuntu directory structure, linux folder hierarchy, FHS linux"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Guides', url: '/guides' },
+    { name: 'Linux Filesystem', url: '/guides/linux-filesystem' },
+  ]}
+>
   <div class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
       <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
       <span>/</span>
       <a href="/guides" class="hover:text-ubuntu-orange transition-colors">Guides</a>

@@ -9,10 +9,18 @@ const tabCount = shortcuts.filter(s => s.category === 'tab-management').length;
 const editorCount = shortcuts.filter(s => s.category === 'text-editors').length;
 const volumeCount = shortcuts.filter(s => s.category === 'volumes-drives').length;
 ---
-<BaseLayout title="Cheat Sheets" description="Default Ubuntu keyboard shortcuts by category.">
+<BaseLayout
+  title="Cheat Sheets"
+  description="Default Ubuntu keyboard shortcuts by category."
+  keywords="ubuntu shortcut cheatsheet, ubuntu keyboard shortcuts list, gnome keyboard shortcuts"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Cheatsheets', url: '/cheatsheets' },
+  ]}
+>
   <div class="max-w-6xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
       <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
       <span>/</span>
       <span style="color: var(--text-primary);">Cheatsheets</span>
