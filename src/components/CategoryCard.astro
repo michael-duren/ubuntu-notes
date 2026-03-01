@@ -57,6 +57,12 @@ const { title, description, href, count, icon } = Astro.props;
           <circle cx="10" cy="17" r="0.5" fill="currentColor" stroke="none"></circle>
         </svg>
       )}
+      {icon === 'debugger' && (
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0-6 0"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9V4M12 15v5M9 12H4M15 12h5M9.5 9.5L6 6M14.5 9.5L18 6M9.5 14.5L6 18M14.5 14.5L18 18"></path>
+        </svg>
+      )}
     </div>
     {count !== undefined && (
       <span class="text-xs font-medium px-2 py-1 rounded-full bg-ubuntu-orange/10 text-ubuntu-orange">

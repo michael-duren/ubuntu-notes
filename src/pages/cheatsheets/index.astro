@@ -8,6 +8,7 @@ const desktopCount = shortcuts.filter(s => s.category === 'desktop-management').
 const tabCount = shortcuts.filter(s => s.category === 'tab-management').length;
 const editorCount = shortcuts.filter(s => s.category === 'text-editors').length;
 const volumeCount = shortcuts.filter(s => s.category === 'volumes-drives').length;
+const gdbCount = shortcuts.filter(s => s.category === 'gdb-debugging').length;
 ---
 <BaseLayout
   title="Cheat Sheets"
@@ -64,6 +65,13 @@ const volumeCount = shortcuts.filter(s => s.category === 'volumes-drives').lengt
         href="/cheatsheets/volumes-drives"
         count={volumeCount}
         icon="drive"
+      />
+      <CategoryCard
+        title="GDB Debugging"
+        description="GDB commands for breakpoints, stepping, memory, and assembly."
+        href="/cheatsheets/gdb-debugging"
+        count={gdbCount}
+        icon="debugger"
       />
     </div>
   </div>

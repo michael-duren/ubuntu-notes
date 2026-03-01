@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShortcutTable from '../../components/ShortcutTable.astro';
+import shortcuts from '../../data/shortcuts.json';
+
+const filtered = shortcuts.filter(s => s.category === 'gdb-debugging');
+const groups: Record<string, typeof filtered> = {};
+for (const s of filtered) {
+  (groups[s.subcategory] ??= []).push(s);
+}
+---
+<BaseLayout
+  title="GDB Debugger Cheatsheet"
+  description="GDB command reference — breakpoints, stepping, memory inspection, registers, disassembly, and TUI mode."
+  keywords="gdb cheatsheet, gdb commands, gdb shortcuts, gdb reference, gnu debugger cheatsheet"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Cheatsheets', url: '/cheatsheets' },
+    { name: 'GDB Debugging', url: '/cheatsheets/gdb-debugging' },
+  ]}
+>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-sm mb-6 flex items-center gap-2" style="color: var(--text-muted);">
+      <a href="/" class="hover:text-ubuntu-orange transition-colors">Home</a>
+      <span>/</span>
+      <a href="/cheatsheets" class="hover:text-ubuntu-orange transition-colors">Cheatsheets</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">GDB Debugging</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-primary);">GDB Debugger Cheatsheet</h1>
+    <p class="mb-8" style="color: var(--text-secondary);">Essential GDB commands for debugging C/C++ programs and stepping through assembly code.</p>
+
+    {Object.entries(groups).map(([subcategory, items]) => (
+      <ShortcutTable title={subcategory} shortcuts={items} />
+    ))}
+
+    <div class="mt-8 p-4 rounded-lg border" style="background-color: var(--surface-secondary); border-color: var(--border-color);">
+      <p class="text-sm" style="color: var(--text-secondary);">
+        Want a full walkthrough? Check the <a href="/guides/gdb-debugging" class="text-ubuntu-orange hover:underline font-medium">GDB Debugging Guide</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

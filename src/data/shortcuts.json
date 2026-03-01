@@ -1249,5 +1249,680 @@
     "subcategory": "USB & Removable Drives",
     "type": "default",
     "tags": ["udisks", "power", "off", "eject", "usb"]
+  },
+
+  {
+    "id": "gdb-start",
+    "shortcut": "gdb ./program",
+    "action": "Start GDB with a program",
+    "category": "gdb-debugging",
+    "subcategory": "Starting & Quitting",
+    "type": "default",
+    "tags": ["gdb", "start", "launch", "debug"]
+  },
+  {
+    "id": "gdb-start-args",
+    "shortcut": "gdb --args ./prog arg1 arg2",
+    "action": "Start GDB with program arguments",
+    "category": "gdb-debugging",
+    "subcategory": "Starting & Quitting",
+    "type": "default",
+    "tags": ["gdb", "start", "arguments", "args"]
+  },
+  {
+    "id": "gdb-start-tui",
+    "shortcut": "gdb -tui ./program",
+    "action": "Start GDB in TUI (split-pane) mode",
+    "category": "gdb-debugging",
+    "subcategory": "Starting & Quitting",
+    "type": "default",
+    "tags": ["gdb", "tui", "start", "interface"]
+  },
+  {
+    "id": "gdb-attach",
+    "shortcut": "gdb -p PID",
+    "action": "Attach GDB to a running process",
+    "category": "gdb-debugging",
+    "subcategory": "Starting & Quitting",
+    "type": "default",
+    "tags": ["gdb", "attach", "process", "pid"]
+  },
+  {
+    "id": "gdb-core",
+    "shortcut": "gdb ./program core",
+    "action": "Debug a core dump file",
+    "category": "gdb-debugging",
+    "subcategory": "Starting & Quitting",
+    "type": "default",
+    "tags": ["gdb", "core", "dump", "crash"]
+  },
+  {
+    "id": "gdb-run",
+    "shortcut": "run (r)",
+    "action": "Start or restart the program",
+    "category": "gdb-debugging",
+    "subcategory": "Starting & Quitting",
+    "type": "default",
+    "tags": ["gdb", "run", "start", "execute"]
+  },
+  {
+    "id": "gdb-quit",
+    "shortcut": "quit (q)",
+    "action": "Exit GDB",
+    "category": "gdb-debugging",
+    "subcategory": "Starting & Quitting",
+    "type": "default",
+    "tags": ["gdb", "quit", "exit"]
+  },
+
+  {
+    "id": "gdb-break-func",
+    "shortcut": "break main (b main)",
+    "action": "Set breakpoint at function",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "break", "breakpoint", "function"]
+  },
+  {
+    "id": "gdb-break-line",
+    "shortcut": "break 42 (b 42)",
+    "action": "Set breakpoint at line number",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "break", "breakpoint", "line"]
+  },
+  {
+    "id": "gdb-break-file-line",
+    "shortcut": "break file.c:42",
+    "action": "Set breakpoint at file and line",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "break", "breakpoint", "file", "line"]
+  },
+  {
+    "id": "gdb-break-addr",
+    "shortcut": "break *0x401234",
+    "action": "Set breakpoint at memory address",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "break", "breakpoint", "address", "assembly"]
+  },
+  {
+    "id": "gdb-break-cond",
+    "shortcut": "break 42 if x > 10",
+    "action": "Set conditional breakpoint",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "break", "conditional", "if"]
+  },
+  {
+    "id": "gdb-tbreak",
+    "shortcut": "tbreak main",
+    "action": "Temporary breakpoint (auto-deletes after hit)",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "temporary", "breakpoint", "tbreak"]
+  },
+  {
+    "id": "gdb-watch",
+    "shortcut": "watch x",
+    "action": "Break when variable x changes",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "watch", "watchpoint", "variable"]
+  },
+  {
+    "id": "gdb-rwatch",
+    "shortcut": "rwatch x",
+    "action": "Break when variable x is read",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "rwatch", "read", "watchpoint"]
+  },
+  {
+    "id": "gdb-info-break",
+    "shortcut": "info breakpoints (i b)",
+    "action": "List all breakpoints",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "info", "breakpoints", "list"]
+  },
+  {
+    "id": "gdb-delete-bp",
+    "shortcut": "delete N (d N)",
+    "action": "Delete breakpoint #N",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "delete", "breakpoint", "remove"]
+  },
+  {
+    "id": "gdb-disable-bp",
+    "shortcut": "disable N",
+    "action": "Disable breakpoint #N (keep but skip)",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "disable", "breakpoint"]
+  },
+  {
+    "id": "gdb-enable-bp",
+    "shortcut": "enable N",
+    "action": "Re-enable breakpoint #N",
+    "category": "gdb-debugging",
+    "subcategory": "Breakpoints & Watchpoints",
+    "type": "default",
+    "tags": ["gdb", "enable", "breakpoint"]
+  },
+
+  {
+    "id": "gdb-next",
+    "shortcut": "next (n)",
+    "action": "Step to next line (over function calls)",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "next", "step", "over"]
+  },
+  {
+    "id": "gdb-step",
+    "shortcut": "step (s)",
+    "action": "Step to next line (into function calls)",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "step", "into", "function"]
+  },
+  {
+    "id": "gdb-finish",
+    "shortcut": "finish (fin)",
+    "action": "Run until current function returns",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "finish", "return", "function"]
+  },
+  {
+    "id": "gdb-continue",
+    "shortcut": "continue (c)",
+    "action": "Resume until next breakpoint",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "continue", "resume", "run"]
+  },
+  {
+    "id": "gdb-until",
+    "shortcut": "until 50 (u 50)",
+    "action": "Run until line 50",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "until", "line", "advance"]
+  },
+  {
+    "id": "gdb-nexti",
+    "shortcut": "nexti (ni)",
+    "action": "Step one assembly instruction (over calls)",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "nexti", "instruction", "assembly", "over"]
+  },
+  {
+    "id": "gdb-stepi",
+    "shortcut": "stepi (si)",
+    "action": "Step one assembly instruction (into calls)",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "stepi", "instruction", "assembly", "into"]
+  },
+  {
+    "id": "gdb-reverse-next",
+    "shortcut": "reverse-next",
+    "action": "Step backward one line (requires record)",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "reverse", "backward", "next"]
+  },
+  {
+    "id": "gdb-record",
+    "shortcut": "record",
+    "action": "Start recording execution (enables reverse debugging)",
+    "category": "gdb-debugging",
+    "subcategory": "Execution Control",
+    "type": "default",
+    "tags": ["gdb", "record", "reverse", "debugging"]
+  },
+
+  {
+    "id": "gdb-print",
+    "shortcut": "print x (p x)",
+    "action": "Print value of variable x",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "print", "variable", "value"]
+  },
+  {
+    "id": "gdb-print-hex",
+    "shortcut": "print/x x",
+    "action": "Print variable in hexadecimal",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "print", "hex", "hexadecimal"]
+  },
+  {
+    "id": "gdb-print-bin",
+    "shortcut": "print/t x",
+    "action": "Print variable in binary",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "print", "binary"]
+  },
+  {
+    "id": "gdb-print-ptr",
+    "shortcut": "print *ptr",
+    "action": "Dereference and print pointer value",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "print", "pointer", "dereference"]
+  },
+  {
+    "id": "gdb-display",
+    "shortcut": "display x",
+    "action": "Auto-print x after every step",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "display", "auto", "print", "watch"]
+  },
+  {
+    "id": "gdb-undisplay",
+    "shortcut": "undisplay N",
+    "action": "Remove auto-display #N",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "undisplay", "remove", "auto"]
+  },
+  {
+    "id": "gdb-info-locals",
+    "shortcut": "info locals",
+    "action": "Print all local variables",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "info", "locals", "variables"]
+  },
+  {
+    "id": "gdb-info-args",
+    "shortcut": "info args",
+    "action": "Print function arguments",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "info", "args", "arguments", "parameters"]
+  },
+  {
+    "id": "gdb-ptype",
+    "shortcut": "ptype x",
+    "action": "Show the type of variable x",
+    "category": "gdb-debugging",
+    "subcategory": "Inspecting Variables",
+    "type": "default",
+    "tags": ["gdb", "ptype", "type", "variable"]
+  },
+
+  {
+    "id": "gdb-backtrace",
+    "shortcut": "backtrace (bt)",
+    "action": "Show the call stack",
+    "category": "gdb-debugging",
+    "subcategory": "Stack & Frames",
+    "type": "default",
+    "tags": ["gdb", "backtrace", "stack", "trace", "callstack"]
+  },
+  {
+    "id": "gdb-bt-full",
+    "shortcut": "backtrace full",
+    "action": "Show call stack with local variables",
+    "category": "gdb-debugging",
+    "subcategory": "Stack & Frames",
+    "type": "default",
+    "tags": ["gdb", "backtrace", "full", "locals"]
+  },
+  {
+    "id": "gdb-frame",
+    "shortcut": "frame N (f N)",
+    "action": "Switch to stack frame #N",
+    "category": "gdb-debugging",
+    "subcategory": "Stack & Frames",
+    "type": "default",
+    "tags": ["gdb", "frame", "stack", "switch"]
+  },
+  {
+    "id": "gdb-up",
+    "shortcut": "up",
+    "action": "Move up one stack frame (toward caller)",
+    "category": "gdb-debugging",
+    "subcategory": "Stack & Frames",
+    "type": "default",
+    "tags": ["gdb", "up", "frame", "caller"]
+  },
+  {
+    "id": "gdb-down",
+    "shortcut": "down",
+    "action": "Move down one stack frame (toward callee)",
+    "category": "gdb-debugging",
+    "subcategory": "Stack & Frames",
+    "type": "default",
+    "tags": ["gdb", "down", "frame", "callee"]
+  },
+  {
+    "id": "gdb-info-frame",
+    "shortcut": "info frame",
+    "action": "Detailed info about current stack frame",
+    "category": "gdb-debugging",
+    "subcategory": "Stack & Frames",
+    "type": "default",
+    "tags": ["gdb", "info", "frame", "detail"]
+  },
+
+  {
+    "id": "gdb-x-bytes",
+    "shortcut": "x/10xb ADDR",
+    "action": "Examine 10 bytes in hex at address",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "examine", "memory", "bytes", "hex"]
+  },
+  {
+    "id": "gdb-x-words",
+    "shortcut": "x/4xw ADDR",
+    "action": "Examine 4 words (32-bit) in hex",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "examine", "memory", "words"]
+  },
+  {
+    "id": "gdb-x-giant",
+    "shortcut": "x/8xg $rsp",
+    "action": "Examine 8 giant words (64-bit) at stack pointer",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "examine", "memory", "stack", "64bit"]
+  },
+  {
+    "id": "gdb-x-string",
+    "shortcut": "x/s ADDR",
+    "action": "Print string at memory address",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "examine", "string", "memory"]
+  },
+  {
+    "id": "gdb-x-instr",
+    "shortcut": "x/10i $pc",
+    "action": "Print 10 instructions at program counter",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "examine", "instructions", "assembly", "pc"]
+  },
+  {
+    "id": "gdb-info-reg",
+    "shortcut": "info registers (i r)",
+    "action": "Show all general-purpose registers",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "info", "registers", "cpu"]
+  },
+  {
+    "id": "gdb-info-all-reg",
+    "shortcut": "info all-registers",
+    "action": "Show ALL registers (including FP, SSE)",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "info", "registers", "all", "sse", "float"]
+  },
+  {
+    "id": "gdb-print-reg",
+    "shortcut": "print/x $rax",
+    "action": "Print a specific register in hex",
+    "category": "gdb-debugging",
+    "subcategory": "Memory & Registers",
+    "type": "default",
+    "tags": ["gdb", "print", "register", "hex"]
+  },
+
+  {
+    "id": "gdb-disas",
+    "shortcut": "disassemble (disas)",
+    "action": "Disassemble current function",
+    "category": "gdb-debugging",
+    "subcategory": "Assembly & Disassembly",
+    "type": "default",
+    "tags": ["gdb", "disassemble", "assembly", "function"]
+  },
+  {
+    "id": "gdb-disas-func",
+    "shortcut": "disassemble main",
+    "action": "Disassemble a specific function",
+    "category": "gdb-debugging",
+    "subcategory": "Assembly & Disassembly",
+    "type": "default",
+    "tags": ["gdb", "disassemble", "assembly", "function", "main"]
+  },
+  {
+    "id": "gdb-disas-source",
+    "shortcut": "disassemble /s main",
+    "action": "Disassemble with source lines interleaved",
+    "category": "gdb-debugging",
+    "subcategory": "Assembly & Disassembly",
+    "type": "default",
+    "tags": ["gdb", "disassemble", "source", "interleave"]
+  },
+  {
+    "id": "gdb-disas-raw",
+    "shortcut": "disassemble /r main",
+    "action": "Disassemble with raw byte encoding",
+    "category": "gdb-debugging",
+    "subcategory": "Assembly & Disassembly",
+    "type": "default",
+    "tags": ["gdb", "disassemble", "raw", "bytes", "encoding"]
+  },
+  {
+    "id": "gdb-intel",
+    "shortcut": "set disassembly-flavor intel",
+    "action": "Use Intel assembly syntax",
+    "category": "gdb-debugging",
+    "subcategory": "Assembly & Disassembly",
+    "type": "default",
+    "tags": ["gdb", "intel", "syntax", "assembly", "disassembly"]
+  },
+  {
+    "id": "gdb-att",
+    "shortcut": "set disassembly-flavor att",
+    "action": "Use AT&T assembly syntax",
+    "category": "gdb-debugging",
+    "subcategory": "Assembly & Disassembly",
+    "type": "default",
+    "tags": ["gdb", "att", "syntax", "assembly", "disassembly"]
+  },
+
+  {
+    "id": "gdb-tui-toggle",
+    "shortcut": "Ctrl+X, A",
+    "action": "Toggle TUI mode on/off",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "toggle", "interface"]
+  },
+  {
+    "id": "gdb-tui-single",
+    "shortcut": "Ctrl+X, 1",
+    "action": "Single-window TUI layout",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "single", "layout"]
+  },
+  {
+    "id": "gdb-tui-dual",
+    "shortcut": "Ctrl+X, 2",
+    "action": "Two-window TUI layout",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "dual", "split", "layout"]
+  },
+  {
+    "id": "gdb-tui-focus-switch",
+    "shortcut": "Ctrl+X, O",
+    "action": "Switch focus between TUI windows",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "focus", "switch", "window"]
+  },
+  {
+    "id": "gdb-tui-refresh",
+    "shortcut": "Ctrl+L",
+    "action": "Refresh TUI display",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "refresh", "redraw"]
+  },
+  {
+    "id": "gdb-layout-src",
+    "shortcut": "layout src",
+    "action": "TUI layout: source code only",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "layout", "source"]
+  },
+  {
+    "id": "gdb-layout-asm",
+    "shortcut": "layout asm",
+    "action": "TUI layout: assembly only",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "layout", "assembly"]
+  },
+  {
+    "id": "gdb-layout-split",
+    "shortcut": "layout split",
+    "action": "TUI layout: source + assembly split",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "layout", "split", "source", "assembly"]
+  },
+  {
+    "id": "gdb-layout-regs",
+    "shortcut": "layout regs",
+    "action": "TUI layout: add register window",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "layout", "registers"]
+  },
+  {
+    "id": "gdb-focus-cmd",
+    "shortcut": "focus cmd",
+    "action": "Focus the GDB command window",
+    "category": "gdb-debugging",
+    "subcategory": "TUI Mode",
+    "type": "default",
+    "tags": ["gdb", "tui", "focus", "command"]
+  },
+
+  {
+    "id": "gdb-list",
+    "shortcut": "list (l)",
+    "action": "Show 10 lines of source around current position",
+    "category": "gdb-debugging",
+    "subcategory": "Source & Info",
+    "type": "default",
+    "tags": ["gdb", "list", "source", "code"]
+  },
+  {
+    "id": "gdb-list-func",
+    "shortcut": "list main",
+    "action": "Show source of a specific function",
+    "category": "gdb-debugging",
+    "subcategory": "Source & Info",
+    "type": "default",
+    "tags": ["gdb", "list", "source", "function"]
+  },
+  {
+    "id": "gdb-info-threads",
+    "shortcut": "info threads",
+    "action": "List all threads",
+    "category": "gdb-debugging",
+    "subcategory": "Source & Info",
+    "type": "default",
+    "tags": ["gdb", "info", "threads", "multithreaded"]
+  },
+  {
+    "id": "gdb-thread",
+    "shortcut": "thread N",
+    "action": "Switch to thread #N",
+    "category": "gdb-debugging",
+    "subcategory": "Source & Info",
+    "type": "default",
+    "tags": ["gdb", "thread", "switch"]
+  },
+  {
+    "id": "gdb-set-args",
+    "shortcut": "set args arg1 arg2",
+    "action": "Set program arguments for next run",
+    "category": "gdb-debugging",
+    "subcategory": "Source & Info",
+    "type": "default",
+    "tags": ["gdb", "set", "args", "arguments"]
+  },
+  {
+    "id": "gdb-shell",
+    "shortcut": "shell make",
+    "action": "Run a shell command from within GDB",
+    "category": "gdb-debugging",
+    "subcategory": "Source & Info",
+    "type": "default",
+    "tags": ["gdb", "shell", "command", "make"]
+  },
+  {
+    "id": "gdb-help",
+    "shortcut": "help COMMAND",
+    "action": "Show GDB help for a command",
+    "category": "gdb-debugging",
+    "subcategory": "Source & Info",
+    "type": "default",
+    "tags": ["gdb", "help", "manual", "documentation"]
   }
 ]
